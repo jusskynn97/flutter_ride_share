@@ -5,7 +5,7 @@ import 'package:ride_share/core/routes/route_paths.dart';
 import 'package:ride_share/core/uitls/colors.dart';
 import 'package:ride_share/features/register/presentation/bloc/register_bloc/register_event.dart';
 import 'package:ride_share/features/register/presentation/screen/register_screen/register_layout.dart';
-import 'package:ride_share/features/register/presentation/widgets/password_field.dart';
+import 'package:ride_share/shared/widget/password_field.dart';
 
 class RegisterStep1 extends StatelessWidget {
   final Bloc bloc;

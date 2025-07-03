@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_verification_code/flutter_verification_code.dart';
 import 'package:ride_share/core/uitls/colors.dart';
 import 'package:ride_share/features/register/presentation/bloc/register_bloc/register_event.dart';
 import 'package:ride_share/features/register/presentation/screen/register_screen/register_layout.dart';
+import 'package:ride_share/features/register/presentation/widgets/gender_radio_button.dart';
 
 class RegisterStep4 extends StatelessWidget {
   final Bloc bloc;
@@ -23,50 +23,11 @@ class RegisterStep4 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           spacing: 20,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                border: BoxBorder.all(
-                  width: 1,
-                  color: greyBorderColor
-                )
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(40.0),
-                child: Column(
-                  children: [
-                    SvgPicture.asset('assets/images/female.svg'),
-                    Text(
-                      'Female'
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                border: BoxBorder.all(
-                  width: 1,
-                  color: greyBorderColor
-                )
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(40.0),
-                child: Column(
-                  children: [
-                    SvgPicture.asset('assets/images/male.svg'),
-                    Text(
-                      'Male'
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            GenderRadioButton()
           ],
         ),
       ],
-      label: 'Verify code',
+      label: 'Select' ,
       onNext: () => {bloc.add(RegisterNextStep())},
       onBack: () => {bloc.add(RegisterPreviousStep())},
     );

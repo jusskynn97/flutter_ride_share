@@ -43,6 +43,9 @@ class CountryDropdown extends StatelessWidget {
                 height: 16,
                 placeholder: (_, __) => const SizedBox(width: 24, height: 16),
                 errorWidget: (_, __, ___) => const Icon(Icons.flag),
+                errorListener: (_) => {
+                  print('error')
+                },
               )
             );
           }).toList(),
